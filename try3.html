@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      background-image: linear-gradient(rgb(235, 178, 201), rgb(225, 203, 156));
+     /*  background-position: center center;
+      background-size: cover;
+      background-attachment: fixed; */
+    } 
+
+     form {
+      background-color: transparent;
+      padding: 30px;
+      margin: 50px;
+      border: 2px;
+      border-radius: 10px;
+      box-shadow: 0 100px 500px rgba(0, 0, 0, 0.5);
+    } 
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: black;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      height: 2vh;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5rem;
+      background-color: transparent;
+      color: rgb(12, 12, 11);
+      font-size: large;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin: 20px 50px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+p {
+    color: rgb(237, 240, 236);
+}
+
+
+
+
+        /* CSS for styling the popup */
+        .popup {
+          position: fixed;
+          top: 20px; /* Adjust top position as needed */
+          right: 20px; /* Adjust right position as needed */
+          background-color: #4CAF50; /* Green color */
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          display: none; /* Initially hidden */
+        }
+      </style>
+    
+</head>
+<body>
+   
+  <form id="registrationForm" method="post">
+    <h2>Registration</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="....@gmail.com" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" maxlength="15" required><br>
+
+    <label for="Male">Male:</label>
+    <input type="radio" id="Male" name="title" required> &nbsp;
+
+    <label for="Female">Female:</label>
+    <input type="radio" id="Female" name="title" required>
+<br>
+<br>
+
+    <label for="Country">Country</label>
+    <select name="country" id="country">
+        <option value="country" required>
+            <option>Cameroon</option>
+            <option>Nigeria</option>
+            <option>Alegeria</option>
+            <option>Germany</option>
+            <option>U.S.A</option>
+            <option>Canada</option>
+        </option>
+      </select>
+<br>
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="successPopup" class="popup">
+    Registration Successful!
+  </div>
+
+  <script>
+    const registrationForm = document.getElementById('registrationForm');
+    const successPopup = document.getElementById('successPopup');
+
+    registrationForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      // Simulate successful registration (replace with actual server-side logic)
+      const isRegistrationSuccessful = true; 
+
+      if (isRegistrationSuccessful) {
+        // Show the success popup
+        successPopup.style.display = 'block';
+
+        // Set a timeout to redirect after a short delay (e.g., 2 seconds)
+        setTimeout(() => {
+          window.location.href = 'index.html'; // Replace 'index.html' with the actual path to your home page
+        }, 2000); 
+      } else {
+        // Handle registration failure (e.g., display an error message)
+        alert('Registration failed. Please try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>

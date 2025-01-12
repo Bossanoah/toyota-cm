@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign_in</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+* {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+font-family: 'oswald', sans-serif;
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background-color: rgb(3, 3, 40);
+overflow: hidden;
+}
+
+.box {
+position: relative;
+width: 38rem;
+height: 42rem;
+background: #1c1c1c;
+border-radius: 8rem;
+overflow: hidden;
+}
+
+.box::before {
+ content: "";
+ position: absolute;
+ top: -50%;
+ left: -50%;
+ width: 38rem;
+ height: 42rem;
+ background-color: linear-gradient(0deg, transparent, #1fe851, #1fe83a);
+ transform-origin: bottom right;
+ animation: animate 6s linear infinite;
+}
+
+.box::after {
+content: "";
+ position: absolute;
+ top: -50%;
+ left: -50%;
+ width: 38rem;
+ height: 42rem;
+ background-color: linear-gradient(0deg, transparent, #9be81f, #e8918f);
+ transform-origin: bottom right;
+ animation: animate 6s linear infinite;
+ animation-delay: -3s;
+}
+
+@keyframes animate {
+0%{
+    transform: rotate(0deg);
+}
+100%{
+    transform: rotate(360deg);
+}
+}
+
+.form {
+position: absolute;
+inset: 0.2rem;
+border-radius: 8rem;
+background: #28292d;
+z-index: 10;
+padding: 5rem 4rem;
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+
+.form h2 {
+color: #fff;
+font-weight: 800;
+text-transform: uppercase;
+letter-spacing: 0.1rem;
+}
+
+.form .input{
+text-align: left; 
+}
+
+.form .input .inputbox{
+margin-top: 1rem;
+}
+
+.form .input. .inputbox label{
+display: block;
+color: #fff;
+margin-bottom: 0.5rem;
+font-size: 1.8rem; 
+letter-spacing: 0.1rem;
+} 
+
+.form .input .inputbox input{
+position: relative;
+width: 100%;
+height: 4rem;
+border: 2px solid #e9dc1e;
+outline: none;
+padding: 5px 15px;
+background: transparent;
+color: #ffffff;
+font-size: 1.8rem;
+border-radius: 5rem;
+transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form .input .inputbox input:hover {
+border-color: #f1e430;
+box-shadow: 0px 0px 10px 5px rgb(233, 220, 30, 0.5);
+}
+
+.form .input .inputbox input[type="submit"]{
+cursor: pointer;
+margin-top: 2rem;
+letter-spacing: 1px;
+position: relative;
+width: 100%;
+height: 4rem;
+border: none;
+outline: none;
+padding: 5px 1.5rem;
+background: #e9dc1e;
+color: #000000;
+font-size: 2rem;
+font-weight: 800;
+border-radius: 5rem;
+transition: box-shadow 0.3s ease, background-color 0.1s ease;
+}
+
+.form .input .inputbox input[type="submit"]:hover {
+background: linear-gradient(315deg, #c8ff02, #e9a21e);
+}
+
+.form .input .inputbox input[type="submit"]:active {
+color: rgb(225, 225, 225, 0.521);
+background: #c8ff02;
+}
+
+.forgot{
+margin-top: 1rem;
+color: #fff;
+font-size: 1.4rem;
+letter-spacing: 1px;
+}
+
+.forgot a{
+color: #9bc81f;
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="form">
+            <h2>Login</h2>
+            <div class="input">
+                <div class="inputbox">
+                    <label for="username">Username</label>
+                    <input type="text">
+                </div>
+                <div class="inputbox">
+                    <label for="username">Password</label>
+                    <input type="password">
+                </div>
+                <div class="inputbox">
+                    <input type="submit" name="" value="Sign In">
+                </div>
+            </div>
+            <p class="forgot">Forgot password? <a href="#">Click here</a></p>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
